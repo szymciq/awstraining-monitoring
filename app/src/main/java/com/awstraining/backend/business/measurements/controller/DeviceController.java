@@ -36,7 +36,7 @@ class DeviceController implements DeviceIdApi {
     public ResponseEntity<Measurement> publishMeasurements(final String deviceId, final Measurement measurement) {
         Counter counter = Counter.
                     .builder("publishMeasurements.counter")
-                    .tag("method", retrieveMeasurements)
+                    .tag("method", "publishMeasurements")
                     .register(meterRegistry);
         counter.increment();
         
@@ -49,7 +49,7 @@ class DeviceController implements DeviceIdApi {
     public ResponseEntity<Measurements> retrieveMeasurements(final String deviceId) {
         Counter counter = Counter.
                             .builder("retrieveMeasurements.counter")
-                            .tag("method", retrieveMeasurements)
+                            .tag("method", "retrieveMeasurements")
                             .register(meterRegistry);
         counter.increment();
 
