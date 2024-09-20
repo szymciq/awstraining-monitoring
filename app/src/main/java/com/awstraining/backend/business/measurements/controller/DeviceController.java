@@ -34,7 +34,7 @@ class DeviceController implements DeviceIdApi {
 
     @Override
     public ResponseEntity<Measurement> publishMeasurements(final String deviceId, final Measurement measurement) {
-        Counter counter = Counter.
+        Counter counter = Counter
                     .builder("publishMeasurements.counter")
                     .tag("method", "publishMeasurements")
                     .register(meterRegistry);
@@ -47,7 +47,7 @@ class DeviceController implements DeviceIdApi {
     }
     @Override
     public ResponseEntity<Measurements> retrieveMeasurements(final String deviceId) {
-        Counter counter = Counter.
+        Counter counter = Counter
                             .builder("retrieveMeasurements.counter")
                             .tag("method", "retrieveMeasurements")
                             .register(meterRegistry);
